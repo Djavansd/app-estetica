@@ -27,18 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   btnSalvar.addEventListener("click", () => {
-  alert("CLIQUE CHEGOU AQUI");
+    const nome = nomeClinica.value.trim();
 
-  const nome = document.getElementById("nomeClinica").value.trim();
+    console.log("🧪 Clique em salvar. Nome:", nome);
 
-  const cfg = ConfigClinica.obter();
-  cfg.clinica_id = "TESTE_FORCADO";
-
-  ConfigClinica.salvar(cfg);
-
-  alert("SALVO COM ID FORCADO");
-});
-
+    if (!nome) {
+      alert("Informe o nome da clínica");
+      return;
+    }
 
     // 🔑 SEMPRE reobter o config
     const cfg = ConfigClinica.obter();

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visual do Painel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>🎨 Visual do painel</h1>
+    <p>Essas cores afetam apenas o painel administrativo</p>
+  </div>
+
+  <div class="card">
+
+    <label>Cor principal (botões)</label>
+    <input type="color" id="corPrimariaPainel" class="input" />
+
+    <label>Fundo (início)</label>
+    <input type="color" id="fundoInicioPainel" class="input" />
+
+    <label>Fundo (fim)</label>
+    <input type="color" id="fundoFimPainel" class="input" />
+
+    <button class="button" id="btnSalvarVisualPainel" style="margin-top:16px">
+      Salvar visual do painel
+    </button>
+
+  </div>
+
+  <button
+    class="button"
+    style="margin-top:12px;background:#999"
+    onclick="history.back()"
+  >
+    Voltar
+  </button>
+
+</div>
+
+<script src="js/configStorage.js"></script>
+<script src="js/painel/configVisualPainel.js"></script>
+
+</body>
+</html>

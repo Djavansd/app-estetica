@@ -1,0 +1,649 @@
+/* ===== SERVIÇOS ===== */
+.servico {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.servico:hover {
+  background: #f5f0ff;
+  border-color: var(--primary);
+}
+
+/* ===== INPUTS ===== */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+/* ===== HORÁRIOS ===== */
+.horario {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.horario:hover {
+  background: #f5f0ff;
+  border-color: var(--primary);
+}
+
+/* ===== CARD PADRÃO ===== */
+.card {
+  margin-bottom: 16px; /* <<< ISSO resolve o problema */
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 16px;
+  border-radius: 16px;
+
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+  margin-bottom: 16px;
+}
+
+.whatsapp-card:hover {
+  background: #e9ffe9;
+}
+
+.whatsapp-icon {
+  font-size: 20px;
+}
+
+.servico-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.servico-linha:last-child {
+  border-bottom: none;
+}
+
+.servico-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.servico-info span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.servico-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status {
+  font-size: 18px;
+}
+
+.status.ativo {
+  color: green;
+}
+
+.status.inativo {
+  color: #ccc;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dia-btn {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
+
+.dia-btn.ativo {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.icon.instagram {
+  color: #E1306C;
+}
+
+.contato-item.instagram:hover {
+  background: #fff0f6;
+}
+
+/* ===== PAINEL - HORÁRIOS ===== */
+
+#diasSemana {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 20px 0; /* espaço em cima e embaixo */
+}
+
+.dia-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dia-btn.ativo {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* Espaço extra antes do botão salvar */
+#btnSalvarHorario {
+  margin-top: 16px;
+}
+/* ===== NOTIFICAÇÃO DE NOVO AGENDAMENTO ===== */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, top 0.3s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  top: 40px;
+}
+.aviso-cancelamento {
+  font-size: 13px;
+  color: #555;
+  text-align: center;
+  margin: 12px 8px 4px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.icon.whatsapp {
+  color: #25D366;
+}
+
+
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f7f5ff;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+/* ===== ÍCONES ===== */
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.icon.whatsapp {
+  color: #25D366;
+}
+/* ===== CONTATO (CLIENTE) ===== */
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+  border-radius: 16px;
+
+  background: #ffffff;
+  text-decoration: none;
+  color: #2e2e2e;
+  font-weight: 600;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.contato-item:hover {
+  background: #e9ffe9;
+}
+
+/* ÍCONE */
+.icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.icon.whatsapp {
+  color: #25D366;
+}
+.hidden {
+  display: none !important;
+}
+/* ===== ÁREA DE CONTATO (CLIENTE) ===== */
+.contato-item {
+  margin-bottom: 12px;
+}
+
+.contato-item:last-child {
+  margin-bottom: 0;
+}
+/* ===== TEXTO BASE DO PAINEL ===== */
+body {
+  color: #000;
+}
+/* ===== PLANO - DESTAQUE EM AJUSTES ===== */
+/* ===== PLANO - AJUSTE DE RESPIRO ===== */
+.plano-destaque {
+  padding: 22px;           /* mais espaço interno */
+  border-radius: 18px;
+}
+
+.plano-destaque p {
+  margin-bottom: 6px;     /* separa blocos de texto */
+}
+
+.plano-destaque p:last-of-type {
+  margin-bottom: 16px;
+  line-height: 1.5;     /* espaço antes do botão */
+}
+
+.btn-plano {
+  margin-top: 6px;         /* afasta do texto */
+  padding: 16px;           /* botão mais confortável */
+}
+.card.meus-agendamentos {
+  background: #faf9fd;
+  box-shadow: none;
+  border: 1px dashed rgba(0,0,0,0.08);
+}
+
+.card.meus-agendamentos h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.card.meus-agendamentos p {
+  font-size: 12px;
+  opacity: 0.6;
+}
+.meus-agendamentos {
+  background: #faf9fd;
+  border: 1px dashed rgba(0,0,0,0.08);
+  box-shadow: none;
+}
+
+.meus-agendamentos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.meus-agendamentos-info {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+.hidden {
+  display: none;
+}
+/* ===== PREVIEW DE LOGO (PADRÃO GLOBAL) ===== */
+.logo-preview {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-preview img {
+  width: 100%;
+  max-width: 140px;
+  max-height: 140px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+/* ===== CONFIGURAÇÕES COM ÍCONES ===== */
+
+.grid-config {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.config-item {
+  background: #f7f5ff;
+  border-radius: 14px;
+  padding: 18px 10px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.config-item span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.config-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Mobile ajuste */
+@media (max-width: 480px) {
+  .grid-config {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ===== LISTA DE CONFIGURAÇÕES ===== */
+
+.config-lista {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  padding: 6px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* Cada item */
+.config-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* separador leve */
+.config-item + .config-item {
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.config-item:hover {
+  background: rgba(108, 74, 182, 0.08);
+}
+
+/* ícone */
+.config-item .icon {
+  font-size: 18px;
+  width: 32px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* texto */
+.config-item .text {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* seta */
+.config-item .arrow {
+  font-size: 20px;
+  opacity: 0.4;
+}
+#painelPrincipal {
+  position: relative;
+  z-index: 2;
+}
+
+#cadastroInicial {
+  position: relative;
+  z-index: 1;
+}
+/* =====================================
+   CONFIGURAÇÕES – COMPACTO / APP REAL
+===================================== */
+
+.config-lista {
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(8px);
+  border-radius: 22px;
+  padding: 6px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+/* item */
+.config-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+
+  padding: 12px 14px;
+  margin-bottom: 8px;
+
+  cursor: pointer;
+
+  box-shadow: 
+    0 6px 14px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.config-item:last-child {
+  margin-bottom: 0;
+}
+
+.config-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 10px 22px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* =====================================
+   CONFIGURAÇÕES – ÍCONES MAIS FORTES
+===================================== */
+
+.config-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  background: rgba(255,255,255,0.92);
+  border-radius: 16px;
+
+  padding: 14px 16px;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  box-shadow: 
+    0 6px 16px rgba(0,0,0,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.config-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 12px 26px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* ===== ÍCONE (MAIOR + PREMIUM) ===== */
+.config-item .icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  /* degradê mais elegante */
+  background: linear-gradient(
+    135deg,
+    #7b5ce1,
+    #6C4AB6,
+    #5633b8
+  );
+
+  color: #fff;
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 18px rgba(108,74,182,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+/* texto */
+.config-item .text {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+/* seta */
+.config-item .arrow {
+  font-size: 20px;
+  opacity: 0.35;
+}
+/* melhora resposta ao toque no mobile */
+.config-item {
+  will-change: transform;
+}
+
+.config-item:active {
+  transform: scale(0.97);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.18);
+}
+/* =========================
+   SERVIÇO SELECIONADO (CLIENTE)
+========================= */
+
+.servico {
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.servico:hover {
+  transform: scale(1.01);
+}
+
+.servico.selecionado {
+  border-color: var(--primary);
+  background: rgba(108, 74, 182, 0.12);
+  transform: scale(1.03);
+}
+
+/* ✓ ÍCONE DE CONFIRMAÇÃO */
+.servico.selecionado::after {
+  content: "✓";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ===== TEMA DO CLIENTE (FONTE ÚNICA) ===== */
+body {
+  background: linear-gradient(
+    180deg,
+    var(--cliente-bg-start, var(--bg-start)),
+    var(--cliente-bg-end, var(--bg-end))
+  );
+}
+
+/* Botões do cliente */
+.button {
+  background: var(--cliente-primary, var(--primary));
+}
+
+/* Serviço selecionado */
+.servico.selecionado {
+  border-color: var(--cliente-primary, var(--primary));
+}
+
+.servico.selecionado::after {
+  background: var(--cliente-primary, var(--primary));
+}
+
+
+
+
+
+

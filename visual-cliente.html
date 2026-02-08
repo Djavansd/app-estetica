@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Identidade visual do cliente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>🎨 Identidade visual</h1>
+    <p>Defina as cores que o cliente verá no app</p>
+  </div>
+
+  <div class="card">
+
+    <label>Cor principal da marca</label>
+    <input type="color" id="corPrimariaCliente" class="input" />
+
+    <label>Cor de fundo (início)</label>
+    <input type="color" id="corFundoInicioCliente" class="input" />
+
+    <label>Cor de fundo (fim)</label>
+    <input type="color" id="corFundoFimCliente" class="input" />
+
+    <button class="button" id="btnSalvarVisualCliente" style="margin-top:16px">
+      Salvar identidade visual
+    </button>
+
+    <p style="font-size:13px;opacity:.7;margin-top:10px">
+      Essas cores aparecem automaticamente no app do cliente
+    </p>
+
+  </div>
+
+  <button
+    class="button"
+    style="margin-top:12px;background:#999"
+    onclick="history.back()"
+  >
+    Voltar
+  </button>
+
+</div>
+
+<script src="../js/configStorage.js"></script>
+<script src="../js/painel/configVisualCliente.js"></script>
+
+</body>
+</html>

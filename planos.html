@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planos | Estética Viva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS base do painel -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <style>
+    body {
+      background: #f5f5f7;
+      color: #000;
+    }
+
+    .planos-container {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    .planos-container h1 {
+      font-size: 22px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .planos-container p.sub {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .plano-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .plano-card h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .plano-card ul {
+      padding-left: 18px;
+      margin-bottom: 16px;
+    }
+
+    .plano-card li {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .plano-free {
+      border: 2px solid #ddd;
+    }
+
+    .plano-pro {
+      border: 2px solid var(--primary);
+    }
+
+    .plano-pro h2 {
+      color: var(--primary);
+    }
+
+    .btn-plano {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-free {
+      background: #e0e0e0;
+      color: #555;
+      cursor: default;
+    }
+
+    .btn-pro {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .voltar {
+      display: block;
+      margin-top: 24px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="planos-container">
+    <h1>Planos disponíveis</h1>
+    <p class="sub">
+      Você atingiu o limite do plano gratuito.  
+      Veja abaixo as opções para continuar.
+    </p>
+
+    <!-- PLANO FREE -->
+    <div class="plano-card plano-free">
+      <h2>Plano Gratuito</h2>
+      <ul>
+        <li>Até <strong>3 serviços ativos</strong></li>
+        <li>Até <strong>10 agendamentos por mês</strong></li>
+        <li>Acesso ao painel administrativo</li>
+      </ul>
+      <button class="btn-plano btn-free">
+        Plano atual
+      </button>
+    </div>
+
+    <!-- PLANO PRO -->
+    <div class="plano-card plano-pro">
+      <h2>Plano Completo</h2>
+      <ul>
+        <li>Serviços ilimitados</li>
+        <li>Agendamentos ilimitados</li>
+        <li>Prioridade no suporte</li>
+      </ul>
+      <button class="btn-plano btn-pro" onclick="contatar()">
+        Ativar plano completo
+      </button>
+    </div>
+
+    <a href="painel.html" class="voltar">← Voltar para o painel</a>
+  </div>
+
+  <script>
+    function contatar() {
+      // Por enquanto, fluxo simples
+      // Depois pode virar Pix ou checkout
+      window.open(
+        'https://wa.me/55SEUNUMEROAQUI?text=Olá,%20quero%20ativar%20o%20plano%20completo',
+        '_blank'
+      );
+    }
+  </script>
+</body>
+</html>

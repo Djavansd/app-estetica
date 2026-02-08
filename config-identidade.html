@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Identidade da Clínica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>Identidade da clínica</h1>
+    <p>Essas informações aparecem no app do cliente</p>
+  </div>
+
+  <div class="card">
+
+  <input id="nomeClinica" class="input" placeholder="Nome da clínica" />
+  <input id="sloganClinica" class="input" placeholder="Slogan" />
+  <input id="enderecoClinica" class="input" placeholder="Endereço resumido" />
+  <input id="telefoneVisivel" class="input" placeholder="Telefone visível (ex: 11999999999)" />
+  <input id="whatsappClinica" class="input" placeholder="WhatsApp (ex: 11999999999)" />
+  <input id="instagramClinica" class="input" placeholder="Instagram (ex: @salaoalpha)" />
+
+  <!-- 🔥 NOVO: URL DA LOGO -->
+  <input
+    id="logoClinica"
+    class="input"
+    placeholder="URL da logo (https://...)"
+  />
+  <input
+  id="mensagemWhatsapp"
+  class="input"
+  placeholder="Mensagem automática do WhatsApp (opcional)"
+/>
+
+
+  <button id="btnSalvar" class="button">
+    Salvar identidade
+  </button>
+
+</div>
+
+  <button
+    class="button"
+    style="margin-top:12px;background:#999"
+    onclick="history.back()"
+  >
+    Voltar
+  </button>
+
+</div>
+
+<!-- 🔥 FIREBASE (modules) -->
+<script type="module" src="./js/firebase.js"></script>
+<script type="module" src="./js/data.js"></script>
+<script type="module" src="./js/firebase-adapter.js"></script>
+
+<!-- APP (scripts normais) -->
+<script src="./js/configStorage.js"></script>
+<script src="./js/config-identidade.js"></script>
+
+</body>
+</html>

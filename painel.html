@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Painel da Clínica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+
+  <style>
+    .menu-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .menu-topo button {
+      width: auto;
+      padding: 8px 14px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- CADASTRO INICIAL -->
+<!-- ========================= -->
+<div id="cadastroInicial" class="app-container hidden">
+  <div class="header">
+    <h1>Bem-vinda 👋</h1>
+    <p>Vamos configurar sua clínica</p>
+  </div>
+  
+
+  <div class="card">
+    <input id="cadNomeClinica" class="input" placeholder="Nome da clínica" />
+    <input id="cadWhatsapp" class="input" placeholder="WhatsApp (11999999999)" />
+    <button class="button" id="btnCriarClinica">Criar clínica</button>
+  </div>
+</div>
+
+<!-- ========================= -->
+<!-- PAINEL PRINCIPAL -->
+<!-- ========================= -->
+<div class="app-container" id="painelPrincipal">
+
+  <div class="header">
+    <h1>Painel da Clínica</h1>
+    <p>Administração</p>
+  </div>
+
+  <div class="menu-topo">
+    <strong id="tituloPainel">Serviços</strong>
+    <div style="display:flex;gap:8px">
+      <button class="button" id="btnServicos">Serviços</button>
+      <button class="button" id="btnAgenda">Agenda</button>
+      <button class="button" id="btnConfig">Ajustes</button>
+    </div>
+  </div>
+
+  <!-- ========================= -->
+<!-- SERVIÇOS -->
+<!-- ========================= -->
+<div id="areaServicos">
+
+  <!-- FUNCIONAMENTO DA CLÍNICA -->
+  <div class="card">
+    <h3>Funcionamento da clínica</h3>
+
+    <label>Dias de funcionamento</label>
+    <div id="diasSemana" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+      <button class="dia-btn" data-dia="1">Seg</button>
+      <button class="dia-btn" data-dia="2">Ter</button>
+      <button class="dia-btn" data-dia="3">Qua</button>
+      <button class="dia-btn" data-dia="4">Qui</button>
+      <button class="dia-btn" data-dia="5">Sex</button>
+      <button class="dia-btn" data-dia="6">Sáb</button>
+      <button class="dia-btn" data-dia="7">Dom</button>
+    </div>
+
+    <label>Horário de início</label>
+    <input type="time" id="horaInicio" class="input">
+
+    <label>Horário de fim</label>
+    <input type="time" id="horaFim" class="input">
+
+    <button class="button" id="btnSalvarFuncionamento">
+      Salvar funcionamento
+    </button>
+  </div>
+
+  <!-- SERVIÇOS CADASTRADOS -->
+  <div class="card">
+    <h3>Serviços cadastrados</h3>
+    <div id="listaServicos"></div>
+  </div>
+
+  <!-- NOVO SERVIÇO -->
+  <div class="card">
+    <h3>Novo serviço</h3>
+    <input id="novoNome" class="input" placeholder="Nome do serviço">
+    <input id="novaDuracao" class="input" type="number" placeholder="Duração (min)">
+    <button class="button" id="btnAdicionar">Adicionar serviço</button>
+  </div>
+
+</div>
+
+  <!-- ========================= -->
+  <!-- AGENDA -->
+  <!-- ========================= -->
+  <div id="areaAgenda" style="display:none">
+    <div class="card">
+      <label>Filtrar por data</label>
+      <input type="date" id="dataFiltro" class="input">
+      <button id="btnLimpar" class="button" style="background:#999">
+        Limpar agendamentos
+      </button>
+    </div>
+
+    <div id="listaAgendamentos"></div>
+  </div>
+
+  <!-- ========================= -->
+  <!-- AJUSTES -->
+  <!-- ========================= -->
+  <div id="areaConfiguracoes" style="display:none">
+
+    <div class="card config-lista">
+
+      <!-- VISUAL DO PAINEL (PROPRIETÁRIO) -->
+<div class="config-item" onclick="location.href='config-visual-painel.html'">
+  <span class="icon">🖥️</span>
+  <span class="text">Visual do painel</span>
+  <span class="arrow">›</span>
+</div>
+
+      <!-- VISUAL DO CLIENTE -->
+      <div class="config-item" onclick="location.href='config-visual-cliente.html'">
+        <span class="icon">🎨</span>
+        <span class="text">Visual do cliente</span>
+        <span class="arrow">›</span>
+      </div>
+
+      <!-- IDENTIDADE -->
+      <div class="config-item" onclick="location.href='config-identidade.html'">
+        <span class="icon">🧾</span>
+        <span class="text">Identidade da clínica</span>
+        <span class="arrow">›</span>
+      </div>
+
+      <!-- LINKS -->
+      <div class="config-item" onclick="location.href='config-links.html'">
+        <span class="icon">🔗</span>
+        <span class="text">Links do salão</span>
+        <span class="arrow">›</span>
+      </div>
+
+      <!-- PLANO -->
+      <div class="config-item" onclick="location.href='planos.html'">
+        <span class="icon">💳</span>
+        <span class="text">Plano</span>
+        <span class="arrow">›</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ========================= -->
+<!-- SCRIPTS -->
+<!-- ========================= -->
+
+<!-- FIREBASE -->
+<!-- CONFIG LOCAL PRIMEIRO -->
+<script src="./js/configStorage.js"></script>
+<script src="./js/painel/resolverClinica.js"></script>
+
+<!-- FIREBASE -->
+<script type="module" src="./js/firebase.js"></script>
+<script type="module" src="./js/data.js"></script>
+<script type="module" src="./js/firebase-adapter.js"></script>
+
+<!-- PAINEL - LÓGICA -->
+<script type="module" src="./js/painel/cadastroInicial.js"></script>
+<script type="module" src="./js/painel/servicos.js"></script>
+<script type="module" src="./js/painel/agenda.js"></script>
+
+<!-- MENU (CONTROLA BOTÕES) -->
+<script src="./js/painel/menu.js"></script>
+
+<!-- 🎨 VISUAL DO PAINEL SEMPRE POR ÚLTIMO -->
+<script src="./js/painel/applyVisualPainel.js"></script>
+
+
+</body>
+</html>
+ 

@@ -1,0 +1,75 @@
+document.addEventListener("DOMContentLoaded", () => {
+if (window.__SEM_CLINICA__ === true) {
+  console.warn("Painel bloqueado: clínica não criada ainda");
+  return;
+}
+
+  const inputLinkCliente = document.getElementById("linkClienteSalao");
+  const btnCopiarCliente = document.getElementById("copiarLinkCliente");
+
+  const inputTelefone = document.getElementById("telefoneCliente");
+  const btnEnviar = document.getElementById("btnEnviarWhatsapp");
+
+  // 🔑 SEMPRE vem do config (painel)
+  const config = ConfigClinica.obter();
+
+  if (!config || !config.clinica_id) {
+    alert("Clínica não configurada corretamente.");
+    return;
+  }
+
+  const clinicaId = config.clinica_id;
+
+  // =========================
+  // LINK OFICIAL DO CLIENTE
+  // =========================
+  const BASE_URL = "https://app-estetica-seven.vercel.app";
+  const linkCliente = `${BASE_URL}?c=${clinicaId}`;
+
+  inputLinkCliente.value = linkCliente;
+
+  // =========================
+  // COPIAR LINK
+  // =========================
+  btnCopiarCliente.onclick = () => {
+    navigator.clipboard.writeText(linkCliente);
+    btnCopiarCliente.innerText = "Copiado ✓";
+
+    setTimeout(() => {
+      btnCopiarCliente.innerText = "Copiar";
+    }, 2000);
+  };
+
+  // =========================
+  // ENVIAR POR WHATSAPP
+  // =========================
+  function limparTelefone(valor) {
+    return valor.replace(/\D/g, "");
+  }
+
+  btnEnviar.onclick = () => {
+    const telefone = limparTelefone(inputTelefone.value);
+
+    if (telefone.length < 10) {
+      alert("Digite um telefone válido com DDD");
+      return;
+    }
+
+    const nomeClinica =
+      config.identidade?.nome && config.identidade.nome !== ""
+        ? config.identidade.nome
+        : "nossa clínica";
+
+    const mensagem =
+`Olá 😊
+
+Aqui está o link para você agendar seu horário no *${nomeClinica}*:
+${linkCliente}
+
+Qualquer dúvida é só chamar 💜`;
+
+    const url = `https://wa.me/55${telefone}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  };
+
+});

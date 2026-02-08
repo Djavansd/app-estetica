@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda da Clínica</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>Agenda</h1>
+    <p>Agendamentos realizados</p>
+  </div>
+
+  <div class="card">
+    <label>Filtrar por data</label>
+    <input type="date" id="dataFiltro" class="input">
+
+    <button id="btnLimpar" class="button" style="margin-top:12px;background:#ccc;color:#000">
+      Limpar todos os agendamentos
+    </button>
+  </div>
+
+  <div id="listaAgendamentos"></div>
+
+</div>
+
+<!-- ✅ PAINEL -->
+<script src="js/configStorage.js"></script>
+<script src="js/painel/agenda.js"></script>
+
+</body>
+</html>

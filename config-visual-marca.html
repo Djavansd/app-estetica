@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Identidade Visual da Marca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>🎨 Identidade visual</h1>
+    <p>Defina as cores da sua marca no app do cliente</p>
+  </div>
+
+  <div class="card">
+
+    <label>Cor principal da marca</label>
+    <input type="color" id="corPrimaria" class="input" />
+
+    <label>Cor de fundo principal</label>
+    <input type="color" id="corFundoInicio" class="input" />
+
+    <label>Cor de destaque secundária</label>
+    <input type="color" id="corFundoFim" class="input" />
+
+    <button id="btnSalvarVisual" class="button" style="margin-top:16px">
+      Salvar identidade visual
+    </button>
+
+    <p style="font-size:13px;opacity:.6;margin-top:10px;text-align:center">
+      Essas cores aparecerão automaticamente no app do cliente
+    </p>
+
+  </div>
+
+  <button
+    class="button"
+    style="margin-top:12px;background:#999"
+    onclick="history.back()"
+  >
+    Voltar
+  </button>
+
+</div>
+
+<!-- Scripts base (não mexer) -->
+<script src="js/configStorage.js"></script>
+<script src="js/applyTheme.js"></script>
+
+<!-- Script exclusivo desta tela -->
+<script src="js/painel/configVisualMarca.js"></script>
+
+</body>
+</html>

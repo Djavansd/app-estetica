@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Links do Salão</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+  <div class="header">
+    <h1>🔗 Link do cliente</h1>
+    <p>Compartilhamento</p>
+  </div>
+
+  <!-- LINK DO CLIENTE -->
+  <div class="card">
+    <label>Link para agendamento</label>
+
+    <div style="display:flex;gap:8px">
+      <input id="linkClienteSalao" class="input" readonly>
+      <button id="copiarLinkCliente" class="button">Copiar</button>
+    </div>
+
+    <p style="font-size:12px;opacity:.6;margin-top:8px">
+      Envie este link para suas clientes agendarem.
+    </p>
+  </div>
+
+  <!-- ENVIAR VIA WHATSAPP -->
+  <div class="card">
+    <label>Enviar link por WhatsApp</label>
+
+    <input
+      id="telefoneCliente"
+      class="input"
+      placeholder="Ex: 11999999999"
+      inputmode="numeric"
+    >
+
+    <button class="button" id="btnEnviarWhatsapp">
+      Enviar link para cliente
+    </button>
+
+    <p style="font-size:12px;opacity:.6;margin-top:10px;text-align:center">
+      O telefone não é salvo.
+    </p>
+  </div>
+
+</div>
+
+<script src="js/configStorage.js"></script>
+<script src="js/painel/linksSalao.js"></script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
   "short_name": "Estética Viva",
   "description": "Agendamento rápido e prático",
 
-  "start_url": "/?c=estetica_demo",
+  "start_url": "/",
   "scope": "/",
 
   "display": "standalone",
@@ -24,3 +24,4 @@
     }
   ]
 }
+

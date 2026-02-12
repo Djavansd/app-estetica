@@ -5,8 +5,8 @@
   <title>Identidade visual do cliente</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="../css/base.css" />
-  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
 </head>
 
 <body>
@@ -24,10 +24,10 @@
     <input type="color" id="corPrimariaCliente" class="input" />
 
     <label>Cor de fundo (início)</label>
-    <input type="color" id="corFundoInicioCliente" class="input" />
+    <input type="color" id="fundoInicioCliente" class="input" />
 
     <label>Cor de fundo (fim)</label>
-    <input type="color" id="corFundoFimCliente" class="input" />
+    <input type="color" id="fundoFimCliente" class="input" />
 
     <button class="button" id="btnSalvarVisualCliente" style="margin-top:16px">
       Salvar identidade visual
@@ -49,8 +49,9 @@
 
 </div>
 
-<script src="../js/configStorage.js"></script>
-<script src="../js/painel/configVisualCliente.js"></script>
+<script src="js/configStorage.js"></script>
+<script type="module" src="js/firebase-adapter.js"></script>
+<script src="js/painel/configVisualCliente.js"></script>
 
 </body>
 </html>

@@ -273,8 +273,13 @@ function inicializarAgendamento() {
     const diasAtivos = funcionamento.dias_ativos || [1,2,3,4,5];
     const diaEscolhido = diaSemanaISO(dataSelecionada);
 
+    if (!funcionamento.hora_inicio || !funcionamento.hora_fim) {
+      listaHorarios.innerHTML = "<p>Horarios ainda nao configurados pela clinica.</p>";
+      return;
+    }
+
     if (!diasAtivos.includes(diaEscolhido)) {
-      listaHorarios.innerHTML = "<p>⚠️ A clínica não atende neste dia.</p>";
+      listaHorarios.innerHTML = "<p>Fechado neste dia. Atendemos apenas nos dias de funcionamento da clinica. Escolha outra data.</p>";
       return;
     }
 
